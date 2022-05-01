@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  * _printf - a function to print anything on the standaoutput
  * @format: these are fromat specifiers (%c, %s, %%)
