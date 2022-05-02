@@ -52,6 +52,7 @@ while (format[i] != '\0')
 	i++;
 }
 write(1, ptr, len++);
+va_end(args);
 free(ptr);
 return (i++);
 }
