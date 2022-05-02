@@ -8,11 +8,6 @@
  * @format: these are fromat specifiers (%c, %s, %%)
  * Return: this returns the number of char printed out
  */
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-
 int _printf(const char *format, ...)
 {
 int i, len, j, t = 0;
