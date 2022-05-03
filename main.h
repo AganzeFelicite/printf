@@ -20,6 +20,7 @@ int _printf(const char *format, ...);
 int counts(va_list args, char format);
 int use_s(va_list args);
 int use_c(va_list args);
+int _strlen(char *c);
 int _putchar(char c);
 #endif /* MAIN_H*/
 
