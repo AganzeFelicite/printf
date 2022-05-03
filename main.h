@@ -1,10 +1,25 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef MAIN_H
+#define MAIN_H
 
-#include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <stdint.h>
-int _putchar(char c);
+#include <stdio.h>
+#include <stdarg.h>
+/**
+ * struct specifier - struct ch
+ * @str: pointer to string
+ * @f: funtion pointer
+ */
+typedef struct specifier
+{
+char *str;
+int (*f)(va_list);
+} specifier;
+/* declaretion of other functions*/
 int _printf(const char *format, ...);
-#endif
+int counts(va_list args, char format);
+int use_s(va_list);
+int use_c(va_list);
+int _putchar(char c);
+#endif /* MAIN_H*/
+

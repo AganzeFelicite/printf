@@ -4,56 +4,42 @@
  * @format: these are fromat specifiers (%c, %s, %%)
  * Return: this returns the number of char printed out
  */
+
 int _printf(const char *format, ...)
 {
-int i, len, j, t = 0;
 va_list args;
-while (format[len] != '\0')
-{
-	len++;
-};
-char *ptr;
-ptr = malloc(sizeof(char) * (len + 1));
-if (ptr == NULL)
-	return (1);
+int i, count, sum = 0;
 va_start(args, format);
-while (format[i] != '\0')
+if (format == NULL)
+	return (-1);
+for (i = 0; format[i] != '\0'; i++)
 {
-	if (format[i] == '%')
+	if (format[i] != '%')
 	{
+		_putchar(format[i]);
+		sum++;
+		continue;
+	}
+	if (format[i + 1] == '%')
+	{
+		_putchar('%');
+		sum++;
 		i++;
-		if (format[i] == 'c')
-		{
-			ptr[j] = va_arg(args, int);
-			j++;
-		}
-		else if (format[i] == 's')
-		{
-			char *s = va_arg(args, char *);
-			while (s[t] != '\0')
-			{
-				ptr[j] = s[t];
-				t++;
-				j++;
-			}
-			ptr[j] == '\0';
-		}
-		else if (format[i] == '%')
-		{
-			ptr[j] = '%';
-			j++;
-		}
+		continue;
 	}
-	else
-	{
-		ptr[j] = format[i];
-		j++;
-	}
-	i++;
+	while (format[i + 1] == ' ')
+		i++;
+	if (format[i + 1] == '\0')
+		return (-1)
+	count = counts(args, format[i + 1])
+	if (count == 0)
+		i++;
+	if (count > 0)
+		sum += count;
+
+
 }
-write(1, ptr, len++);
 va_end(args);
-free(ptr);
-return (i++);
+return (sum);
 }
 
