@@ -18,8 +18,8 @@ int (*f)(va_list);
 /* declaretion of other functions*/
 int _printf(const char *format, ...);
 int counts(va_list args, char format);
-int use_s(va_list);
-int use_c(va_list);
+int use_s(va_list args);
+int use_c(va_list args);
 int _putchar(char c);
 #endif /* MAIN_H*/
 
