@@ -18,6 +18,6 @@ for (j = 0; p[j].str != NULL; j++)
 	if (format == *(p[j].str))
 	{	return (p[j].f(args));
 	}
-	return (0);
 }
+return (0);
 }

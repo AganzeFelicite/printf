@@ -30,13 +30,17 @@ for (i = 0; format[i] != '\0'; i++)
 	while (format[i + 1] == ' ')
 		i++;
 	if (format[i + 1] == '\0')
-		return (-1)
+		return (-1);
 	count = counts(args, format[i + 1]);
 	if (count == -1 || count != 0)
+	{
 		i++;
+	}
 	if (count == 0)
+	{
 		_putchar('%');
 		sum++;
+	}
 	if (count > 0)
 		sum += count;
 
