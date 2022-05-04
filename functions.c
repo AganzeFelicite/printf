@@ -41,8 +41,8 @@ s = "(nil)";
 else if (*s == '\0')/*checking for empty string*/
 	return (-1);
 len = _strlen(s);/*get length of string arg*/
-for (i = 0; s[i]; i++)
+for (i = 0; i < len; i++)
 	_putchar(s[i]);
-return (i);
+return (len);
 }
 
