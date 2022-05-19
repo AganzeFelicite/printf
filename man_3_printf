@@ -1,0 +1,120 @@
+.\" Manpage for _printf
+.TH man 8 "19 April, 2022" "1.0" "_printf man page"
+
+.SH NAME
+	_printf
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The function
+.B _printf()
+ displays output to the standard output stream according to a given format as outlined below.
+
+The function basically writes using the write() function to output to the stdout.
+
+The function is equivalent to printf() function as provided in the stdio.h library.
+	
+	
+.SH Format of the format string
+The format string is a character string, enclosed within a double quote with a percentage
+symbol directly before the string.
+
+The format string comprises of 0 or more instructions: characters that are copied in their
+ original state to the output stream and conversion specifiers, and they each result to 
+processing zero or more subsequent argument. Each of these conversion specification is 
+introduced by the character %, and ends with a conversion specifier.
+
+The syntax of a coversion specification is this:
+
+.B %conversion
+
+The right coversion specifier corresponding to the right amount of argument must be used
+to obtain the right output.
+To print an integer variable named num:
+
+.B _printf("%d", num);
+
+.SH Conversion specifiers
+This is a character the specifies what tye of conversion
+ should be applied.
+
+.B d,
+.B i
+Converts an int argument to a signed decimal.
+
+.B o
+Converts an unsigned int argument to an unsigned octal.	
+
+.B u
+Converts an unsigned int argument to an unsigned decimal.
+
+.B x, 
+.B X	
+.B (x) 
+converts an unsigned int argument to an unsigned Hexadecimal with the letters
+.B(abcdef).
+.B (X) converts an unsigned int argument to an unsigned Hexadecimal with 
+the letters 
+.B (ABCDEF)
+
+.B b	
+Converts an unsigned int to unsigned binary.
+
+.SH RETURN VALUE
+
+Upon success, the number of characters printed (excluding the null byte used to end 
+output of a string)
+
+If an output error is encoutered, a negative value is returned.
+
+.SH BUGS
+
+No known bugs at the time of this documentation.
+
+.SH EXAMPLES
+.B #include "main.h"
+
+/**
+ * main - Entry point
+ *
+ *Return: Always 0
+ */
+
+.B int main(void)
+{
+
+/*declare an integer length to hold the return value of _printf*/
+.br
+	int len;
+.br
+
+/*Assign a value to the variable length*/
+.br
+	len = _printf("This is a string.\n");
+.br
+
+/*display the decimal value of len to the stdout*/
+.br
+	 _printf("Length:[%d, %i]\n", len, len);
+.br
+
+/*print out a char*/
+.br
+	_printf("Char: [%c]\n", 'B');
+.br
+
+/*return 0 on success*/
+.br
+	return (0);
+.br
+}
+
+.SH AUTHORS:
+
+.B TOCHI AZOLIKE 
+
+.B OLUWATOMINWA ADEBISI
+
