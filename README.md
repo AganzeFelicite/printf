@@ -51,4 +51,4 @@ This prints out the string: simba.
 `_printf("%d", 10);`
 This prints out the integer 10.
 
-### Contributors: Adebisi Oluwatomiwa, Azolike Tochi
+### Contributors: Adebisi Oluwatomiwa,Aganze Felicite, Azolike Tochi
